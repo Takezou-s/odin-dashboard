@@ -15,6 +15,7 @@ body {
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr 5fr;
   height: 100vh;
+  max-height: 100vh;
 }
 
 .sidebar {
@@ -138,13 +139,22 @@ body {
   gap: 24px;
 }
 
+.main-content-left {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 24px;
+}
+
 .project-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto repeat(3, 33.333%);
-  grid-auto-rows: 33.333%;
-  gap: 24px;
+  grid-template-rows: repeat(3, 31.333%);
+  grid-auto-rows: 31.333%;
+  /* gap: 24px; */
+  gap: 3%;
   overflow: auto;
+  padding-right: 24px;
+  padding-bottom: 24px;
 }
 
 .project-card {
@@ -155,6 +165,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  border-radius: 8px;
 }
 
 .project-card > p {
@@ -178,12 +189,86 @@ body {
 
 .misc-container {
   display: grid;
-  grid-template-rows: repeat(2, 50%);
-  gap: 24px;
+  grid-template-rows: repeat(2, 45.75%);
+  gap: 5%;
 }
 
 .misc-container > div {
   display: grid;
   grid-template-rows: auto 1fr;
   gap: 24px;
+}
+
+.announcements {
+  background: white;
+  display: flex;
+  overflow: auto;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0px 2px 8px -2px #898989;
+}
+
+.announcement {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  /* flex-basis: 25%; */
+  flex-shrink: 0;
+  flex-grow: 1;
+  max-height: 25%;
+}
+
+.announcement > p {
+  font-size: 12px;
+}
+
+.announcements hr {
+  margin: 5px 0;
+}
+
+.announcement > p {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-wrap: normal;
+  opacity: 0.7;
+}
+
+.trending {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4%;
+  overflow: auto;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0px 2px 8px -2px #898989;
+}
+
+.trending > * {
+  display: flex;
+  gap: 15px;
+  flex-basis: 20%;
+  flex-shrink: 0;
+  flex-grow: 0;
+  max-height: 20%;
+}
+
+.trending a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.trending img {
+  border-radius: 50%;
+}
+
+.trending img + div {
+  margin: auto 0;
+}
+
+.trending img + div > p {
+  opacity: 0.7;
 }
